@@ -1,38 +1,385 @@
-.App {
+body, html {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.app-header {
+  margin-bottom: 30px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-header h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.home-container {
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: linear-gradient(120deg, #89f7fe 25%, #66a6ff 75%);
 }
 
-.App-link {
-  color: #61dafb;
+.about-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(60deg, #89f7fe 25%, #66a6ff 75%);
+}
+.about-section {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  opacity: 0; /* Initially hidden */
+  transform: translateY(20px); /* Initial position for transition */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Transition effect */
+  margin: 20px auto;
 }
 
-@keyframes App-logo-spin {
-  from {
+/* Add a class for the visible state */
+.about-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-button {
+  background-color: #66a6ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.about-container h2 {
+  color: #333;
+  margin-bottom: 10px;
+  font-size: 2rem;
+}
+
+.about-button:hover {
+  background-color: #5077e7;
+}
+
+.about-section h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.about-section p {
+  font-size: 1rem;
+  color: #555;
+}
+.chatbot-container {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 80%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.notes-input {
+  width: 100%;
+  height: 150px;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.num-questions-input {
+  width: 150px;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
+  text-align: center;
+}
+
+.start-session-button {
+  background-color: #66a6ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.start-session-button:hover {
+  background-color: #5077e7;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full height of the viewport */
+  padding: 20px;
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+  overflow: auto; /* Allow scrolling within this container if necessary */
+}
+
+.question-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.question-card h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.question-card p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.answer-input {
+  width: 100%;
+  height: 100px;
+  border: 2px solid #66a6ff;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  resize: none;
+}
+
+.submit-answer-button {
+  background-color: #66a6ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-answer-button:hover {
+  background-color: #5077e7;
+}
+
+.feedback-container {
+  margin-top: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+  max-height: 300px; /* Limit height to prevent overflow */
+}
+
+.feedback-container h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.feedback-container p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.feedback-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.mark-correct-button,
+.mark-incorrect-button {
+  background-color: #66a6ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+.mark-correct-button:hover,
+.mark-incorrect-button:hover {
+  background-color: #5077e7;
+}
+
+.questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 20px;
+  background: linear-gradient(120deg, #89f7fe 0%, #66a6ff 100%);
+}
+
+.question-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-height: 280px; /* Set a max height */
+  min-height: 100px; /* Set a min height to accommodate content */
+  justify-content: center;
+  transition: height 0.3s ease; /* Smooth transition for height changes */
+}
+.feedback-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 400px; /* Set a fixed height */
+  justify-content: center; /* Center content vertically */
+}
+
+
+
+.feedback-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 20px;
+  overflow-y: auto; /* Allow scrolling if content overflows */
+}
+
+
+.congratulations-card,
+.loading-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+
+.submit-answer-button {
+  background-color: #66a6ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-answer-button:hover {
+  background-color: #5077e7;
+}
+
+.feedback-buttons,
+.congratulations-buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.mark-correct-button,
+.mark-incorrect-button,
+.go-home-button,
+.redo-questions-button {
+  background-color: #66a6ff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 10px;
+}
+
+.mark-correct-button:hover,
+.mark-incorrect-button:hover,
+.go-home-button:hover,
+.redo-questions-button:hover {
+  background-color: #5077e7;
+}
+
+.loading-spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #66a6ff;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
     transform: rotate(0deg);
   }
-  to {
+  100% {
     transform: rotate(360deg);
   }
 }
