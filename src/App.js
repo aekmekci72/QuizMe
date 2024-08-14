@@ -7,7 +7,7 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch('http://localhost:5000/increment_counter')
+    fetch('https://quizme-j6kd.onrender.com/increment_counter')
       .then(response => response.text())
       .then(data => {
       })
@@ -48,7 +48,7 @@ function Home() {
 
   const handleStartSession = () => {
     const num = (Math.max(numQuestions,5));
-    fetch('http://localhost:5000/get_questions', {
+    fetch('https://quizme-j6kd.onrender.com/get_questions', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

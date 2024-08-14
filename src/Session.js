@@ -19,7 +19,7 @@ function QuestionsPage() {
     setLoading(true);
     setIsSubmitting(true);
 
-    fetch('http://localhost:5000/get_feedback', {
+    fetch('https://quizme-j6kd.onrender.com/get_feedback', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
