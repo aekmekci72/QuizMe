@@ -51,6 +51,9 @@ async def parse_questions_and_answers(response):
     for i, question in enumerate(questions):
         if "Answer" in question:
             questions[i] = question.split("Answer")[0].strip()
+    for i, question in enumerate(questions):
+        if "Question:" in question:
+            questions[i] = question.split("Question:")[0].strip()
     
 
 
