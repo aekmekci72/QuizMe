@@ -22,11 +22,11 @@ If you prefer to run QuizMeAI locally, follow these steps:
 ```
 cd QuizMe
 ```
-4. **Install dependencies:**
+3. **Install dependencies:**
 ```
 npm install
 ```
-5. **Start the development server:**
+4. **Start the development server:**
 - Frontend:
 ```
 npm start
