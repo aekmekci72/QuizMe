@@ -12,8 +12,11 @@ You can view the live version of the website at https://quizmeai.onrender.com/
 OR 
 1. Clone the repository
 2. Navigate to the project directory
-  ```cd QuizMe```
+
+```cd QuizMe```
 4. Install dependencies
-  ```cd QuizMe```
-5. Start the development server
+
+```npm install```
+6. Start the development server
+  
   ```npm start```
