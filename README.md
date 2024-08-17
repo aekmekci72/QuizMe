@@ -19,12 +19,18 @@ If you prefer to run QuizMeAI locally, follow these steps:
 1. **Clone the Repository:**
 Clone the QuizMeAI repository to your local machine.
 2. **Navigate to the project directory:**
-```cd QuizMe```
-3. **Install dependencies:**
-```npm install```
-4. **Start the development server:**
+```
+cd QuizMe
+```
+4. **Install dependencies:**
+```
+npm install
+```
+5. **Start the development server:**
 Frontend:
-```npm start```
+```
+npm start
+```
 Backend:
 ```
 cd server
