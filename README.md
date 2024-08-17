@@ -17,7 +17,7 @@ You can visit the live version of the website at https://quizmeai.onrender.com/
 
 If you prefer to run QuizMeAI locally, follow these steps:
 1. **Clone the Repository:**
-Clone the QuizMeAI repository to your local machine.
+- Clone the QuizMeAI repository to your local machine.
 2. **Navigate to the project directory:**
 ```
 cd QuizMe
@@ -27,11 +27,11 @@ cd QuizMe
 npm install
 ```
 5. **Start the development server:**
-Frontend:
+- Frontend:
 ```
 npm start
 ```
-Backend:
+- Backend:
 ```
 cd server
 python server.py
