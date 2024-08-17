@@ -8,15 +8,19 @@ QuizMe is a web application designed to enhance test readiness and confidence by
 - **User-Friendly Interface**: Built with React for seamless experience.
 
 ## Usage
-You can view the live version of the website at https://quizmeai.onrender.com/
-OR 
-1. Clone the repository
-2. Navigate to the project directory
 
-```cd QuizMe```
-4. Install dependencies
+### Option 1: Use the Live Website
 
-```npm install```
-6. Start the development server
-  
-  ```npm start```
+You can visit the live version of the website at https://quizmeai.onrender.com/
+
+### Option 2: Run Locally
+
+If you prefer to run QuizMeAI locally, follow these steps:
+1. **Clone the Repository:**
+   - Clone the QuizMeAI repository to your local machine.
+2. **Navigate to the project directory:**
+   - ```cd QuizMe```
+3. **Install dependencies:**
+   - ```npm install```
+4. **Start the development server:**
+   - ```npm start```
